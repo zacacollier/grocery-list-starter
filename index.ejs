@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title></title>
-  </head>
-  <body>
+</head>
+
+<body>
     <ul>
-          <% tasks.forEach(function(task) { %>
-                <li><%= task.text %></li>
+        <% tasks.forEach(function(task) { %>
+            <li>
+                <%= task.text %>
+            </li>
             <% }) %>
-        </ul>
-  </body>
+    </ul>
+</body>
+
 </html>
