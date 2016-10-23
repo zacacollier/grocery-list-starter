@@ -12,6 +12,15 @@ app.get('/', (req, res, next) => {
   })
 })
 
+app.post('/', (req, res, next) => {
+  const task = new TaskModel({
+      text: req.body.text
+  })
+  task.save((err, task) => {
+      res.redirect('/')
+  })
+})
+
 const port = 4000;
 
 app.listen(4000, () => console.log(`Listening on port ${port}`););

@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <title></title>
 </head>
+<form action="/tasks" method="post">
+    <input type="text">
+    <input type="submit" value="+ Add Task">
+</form>
 
-<body>
-    <ul>
-        <% tasks.forEach(function(task) { %>
-            <li>
-                <%= task.text %>
-            </li>
-            <% }) %>
-    </ul>
-</body>
+<ul>
+    <% tasks.forEach(function(task) { %>
+        <li>
+            <%= task.text %>
+        </li>
+        <% }) %>
+</ul>
 
 </html>
