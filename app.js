@@ -13,18 +13,25 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({ extended: false }))
+
 app.get('/', (req, res, next) => {
   TaskModel.find((err, tasks) => {
-    res.render('index', {tasks});
+    console.log(`TASKS: ${tasks}`);
+    err ? console.log('GET error') : console.log('no GET error');
+    res.render('index', { tasks: tasks });
   })
 })
 
 app.post('/tasks', (req, res, next) => {
   const task = new TaskModel({
-      text: req.body.text
+    text: req.body.text,
+    quantity: req.body.quantity
   })
+
   task.save((err, task) => {
-      res.redirect('/')
+    err ? console.log('save error') : console.log('no save error');
+    console.log(task);
+    res.redirect('/')
   })
 })
 
