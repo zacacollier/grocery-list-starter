@@ -15,12 +15,12 @@ router.get('/', (req, res, next) => {
   })
 })
 
-router.post('/tasks', (req, res, next) => {
-  const task = new TaskModel({
+router.post('/', (req, res, next) => {
+  let task = new TaskModel({
     text: req.body.text,
     quantity: req.body.quantity
   });
-  console.log(task);
+  console.log(task, 'hello');
   task.save((err, task) => {
     err ? console.log('save error') : console.log('no save error');
     console.log(task);
