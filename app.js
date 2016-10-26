@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const path = require('path')
 const ejs = require('ejs')
 const bodyParser = require('body-parser');
+mongoose.Promise = global.Promise
 
 const app = express();
 
-const index = require('./routes/index.js')
+// const index = require('./routes/index.js')
 const items = require('./routes/items.js')
 
 mongoose.connect('mongodb://localhost/task-list/');
