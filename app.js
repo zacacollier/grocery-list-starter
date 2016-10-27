@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use('/tasks', items)
+app.use('/', items)
 app.use('/*', (req, res, next) => {
   res.redirect('/tasks')
 })
