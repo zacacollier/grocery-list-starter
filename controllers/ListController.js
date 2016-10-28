@@ -29,7 +29,6 @@ let ListController = {
   },
 
   update: function(req, res, next) {
-    // let id = req.params.id
     TaskModel.findByIdAndUpdate({ _id: req.params.id }, {
       text: req.body.text,
       quantity: req.body.quantity
