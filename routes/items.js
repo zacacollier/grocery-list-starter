@@ -11,7 +11,7 @@ const ListController = require('../controllers/ListController')
 router.get('/', ListController.list);
 
 /*
-* GET
+* GET ONE
 */
 router.get('/:id', ListController.show);
 
@@ -21,7 +21,7 @@ router.get('/:id', ListController.show);
 router.post('/', ListController.create);
 
 /*
-* PUT
+* UPDATE
 */
 router.put('/:id', ListController.update);
 
@@ -29,26 +29,5 @@ router.put('/:id', ListController.update);
 * DELETE
 */
 router.delete('/:id', ListController.remove);
-
-// router.get('/', (req, res, next) => {
-//   TaskModel.find((err, tasks) => {
-//     console.log(`TASKS: ${tasks}`);
-//     err ? console.log('GET error') : console.log('no GET error');
-//     res.render('index', { tasks: tasks });
-//   })
-// })
-//
-// router.post('/', (req, res, next) => {
-//   let task = new TaskModel({
-//     text: req.body.text,
-//     quantity: req.body.quantity
-//   });
-//   console.log(task, 'hello');
-//   task.save((err, task) => {
-//     err ? console.log('save error') : console.log('no save error');
-//     console.log(task);
-//     res.redirect('/')
-//   })
-// })
 
 module.exports = router
